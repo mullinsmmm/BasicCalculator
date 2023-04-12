@@ -1,0 +1,76 @@
+*, * ::before, * ::after {
+    box-sizing: border-box;
+    font-family: Gotham Rounded, sans-serif;
+    font-weight: normal;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #CBCE91FF, #EA738DFF);
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 20vw;
+}
+
+.calculator-grid{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 90vh;
+    grid-template-columns: repeat(4, 150px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.calculator-grid > button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px, solid #FFFFFF;
+    outline: none;
+    background-color:  rgb(234, 115, 141, 0.5);
+    color: #CBCE91FF;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.calculator-grid > button:hover{
+    background-color:  rgba(255, 255, 255, 0.5);
+}
+
+/* = & cancel section */
+.calculator-grid .span-two {
+    grid-column: span 2;
+    color: rgb(234, 115, 141);
+    background-color: #CBCE91FF;
+}
+
+
+/* answer section */
+.output{
+    grid-column: 1 / -1;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+/* first result line smaller and opaique */
+.output .previous-operand{
+    color: rgb(234, 115, 141);
+    font-size: 1.5rem;
+}
+
+/* full size and solid color */
+.output .current-operand{
+    color: rgb(234, 115, 141);
+    font-size: 2.5rem;
+}
